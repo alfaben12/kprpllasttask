@@ -2,6 +2,7 @@
 <script src="<?= base_url() . $this->load->config->item('library'); ?>jquery/jquery-ui.js"></script>
 <script src="<?= base_url() . $this->load->config->item('library'); ?>jquery/jquery.inputmask.bundle.js"></script>
 <script src="<?= base_url() . $this->load->config->item('library'); ?>jquery/jquery.blockUI.js"></script>
+<script src="<?= base_url() . $this->load->config->item('library'); ?>blocknonnumber/blocknonnumber.js"></script>
 
 <script type="text/javascript">
 	var javascript_url_module = "<?= config_item('url_javascript'); ?>";
@@ -9,6 +10,12 @@
 	var url_module = "<?= config_item('url_module'); ?>";
 	var base_url = "<?= base_url(); ?>";
 </script>
+<style type="text/css">
+	.error{
+		color: red;
+		font-size: 13px;
+	}
+</style>
 <?php if(isset($includes_for_layout['css']) AND count($includes_for_layout['css']) > 0): ?>
 	<?php foreach($includes_for_layout['css'] as $css): ?>
 		<?php if($css['script'] == FALSE): ?>
@@ -53,9 +60,6 @@
 						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
 					</div>
 				</form>
-				<div class="navbar-btn navbar-btn-right">
-					<a class="btn btn-success update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-				</div>
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">

@@ -73,7 +73,7 @@ if($config_db == 1) {
 	$hostname = 'localhost';
 	$username = 'root';
 	$password = '';
-	$database = 'budidaya-corp';
+	$database = 'kelompokan';
 }
 
 $db['default'] = array(

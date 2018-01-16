@@ -100,6 +100,7 @@ $autoload['helper'] = array(
 		'developer',
 		'form',
 		'security',
+		'dropdown'
 	);
 
 
