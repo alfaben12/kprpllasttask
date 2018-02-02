@@ -44,37 +44,37 @@
 				<table width="100%">
 					<tr>
 						<td>
-							<?= form_dropdown('txt_kategoriid', $kategori, set_value('txt_kategoriid'), 'data-placeholder="Kategori" id="txt_kategoriid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_kategoriid_parsing', $kategori, set_value('txt_kategoriid_parsing'), 'data-placeholder="Kategori" id="txt_kategoriid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td id="produk_drpdw">
-							<?= form_dropdown('txt_produkid', produk_bykategoriid_dropdown_edit(null), set_value('txt_produkid'), 'data-placeholder="Produk" id="txt_produkid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_produkid_parsing', produk_bykategoriid_dropdown_edit(null), set_value('txt_produkid_parsing'), 'data-placeholder="Produk" id="txt_produkid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>
-							<?= form_dropdown('txt_lenganid', $lengan, set_value('txt_lenganid'), 'data-placeholder="Lengan" id="txt_lenganid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_lenganid_parsing', $lengan, set_value('txt_lenganid_parsing'), 'data-placeholder="Lengan" id="txt_lenganid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>
-							<?= form_dropdown('txt_sizeid', $size, set_value('txt_sizeid'), 'data-placeholder="Size" id="txt_sizeid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_sizeid_parsing', $size, set_value('txt_sizeid_parsing'), 'data-placeholder="Size" id="txt_sizeid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>
-							<?= form_dropdown('txt_warnaid', $warna, set_value('txt_warnaid'), 'data-placeholder="Warna" id="txt_warnaid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_warnaid_parsing', $warna, set_value('txt_warnaid_parsing'), 'data-placeholder="Warna" id="txt_warnaid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>
-							<?= form_dropdown('txt_jenissablonid', $jenissablon, set_value('txt_jenissablonid'), 'data-placeholder="Jenis Sablon" id="txt_jenissablonid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_jenissablonid_parsing', $jenissablon, set_value('txt_jenissablonid_parsing'), 'data-placeholder="Jenis Sablon" id="txt_jenissablonid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
 						<td>
-							<?= form_dropdown('txt_jumlahwarnasablonid', $warnasablon, set_value('txt_jumlahwarnasablonid'), 'data-placeholder="Warna Sablon" id="txt_jumlahwarnasablonid" class="form-control select2-single"') ?>
+							<?= form_dropdown('txt_jumlahwarnasablonid_parsing', $warnasablon, set_value('txt_jumlahwarnasablonid_parsing'), 'data-placeholder="Warna Sablon" id="txt_jumlahwarnasablonid" class="form-control select2-single"') ?>
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>
@@ -141,14 +141,14 @@
 				</table>
 				<br/>
 				<br/>
-				<textarea class="form-control" placeholder="Catatan" rows="3"></textarea>
+				<textarea class="form-control" placeholder="Catatan" name="txt_keterangan" rows="3"></textarea>
 				<br/>
 				<br/>
 				<input type="text" id="txt_hapusrow" name="txt_hapusrow" class="btn btn-primary btn-sm" value="Hapus" size="5">
 				<br/>
 				<br/>
 				<div style="text-align: right">
-					<button type="submit" class="btn btn-primary btn-sm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Simpan&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
+					<input type="submit" class="btn btn-primary btn-sm" id="txt_simpan" value="Simpan">
 				</div>
 			</div>
 		</div>

@@ -129,15 +129,15 @@ $(document).ready(function(){
 		}else{
 			var markup = 
 			"<tr id='record'>" +
-			"<input type='hidden' class='form-control' name='txt_kategoriid["+ key +"]' value='"+ text_kategoriid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_produkid["+ key +"]' value='"+ text_produkid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_sizeid["+ key +"]' value='"+ text_sizeid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_warnaid["+ key +"]' value='"+ text_warnaid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_lenganid["+ key +"]' value='"+ text_lenganid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_jenissablonid["+ key +"]' value='"+ text_jenissablonid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_warnasablonid["+ key +"]' value='"+ text_warnasablonid +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_jumlah["+ key +"]' value='"+ jumlah +"' readonly=''>" +
-			"<input type='hidden' class='form-control' name='txt_harga["+ key +"]' value='"+ harga +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_kategoriid[]' value='"+ kategoriid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_produkid[]' value='"+ produkid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_sizeid[]' value='"+ sizeid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_warnaid[]' value='"+ warnaid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_lenganid[]' value='"+ lenganid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_jenissablonid[]' value='"+ jenissablonid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_warnasablonid[]' value='"+ warnasablonid +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_jumlah[]' value='"+ jumlah +"' readonly=''>" +
+			"<input type='hidden' class='form-control' name='txt_harga[]' value='"+ harga +"' readonly=''>" +
 
 			"<td style='text-align: center;'><input type='checkbox' name='record'></td>" +
 			"<td>&nbsp;</td>" +
@@ -236,5 +236,12 @@ $(document).ready(function(){
 	$("#txt_jumlah").keyup(function(){
 		$("#txt_harga").val(null);
 		$("#text_harga").text(0);
+	});
+
+	$("#txt_simpan").click(function(){
+		if ($("#txt_pelangganid").val() == "" || $("#txt_pelangganid") == null ) {
+			alert("Pelanggan harus di isi");
+			return false;
+		}
 	});
 });

@@ -43,6 +43,54 @@ class Penjualan extends CI_Model{
 	function getHarga(){return $this->harga;}
 	function setHarga($harga){$this->harga = $harga;}
 
+	function get_max_id(){
+		$this->db->select_max('id');
+		$this->db->from('penjualan');
+		$query = $this->db->get();
+		return $query->row()->id + 1;
+	}
+
+	function insert_data(){
+		$data = array(
+			'pelangganid' => $this->getPelangganID(),
+			'no_penjualan' => $this->getNoPenjualan(),
+			'keterangan' => $this->getKeterangan()
+		);
+		$this->db->insert('penjualan', $data);
+	}
+
+	function insert_detail(){
+		$data = array(
+			'penjualanid' => $this->getPenjualanID(),
+			'kategoriid' => $this->getKategoriID(),
+			'produkid' => $this->getProdukID(),
+			'sizeid' => $this->getSizeID(),
+			'warnaid' => $this->getWarnaID(),
+			'lenganid' => $this->getLenganID(),
+			'jenissablonid' => $this->getJenisSablonID(),
+			'warnasablonid' => $this->getJumlahWarnaID(),
+			'jumlah' => $this->getJumlah(),
+			'harga' => $this->getHarga()
+		);
+		$this->db->insert('penjualan_detail', $data);
+	}
+
+	function get_data_penjualan(){
+		$this->db->select('
+			penjualan.id,
+			penjualan.no_penjualan AS no_penjualan,
+			penjualan.keterangan,
+			penjualan.dibuat_tanggal AS tanggal_pesan,
+			pelanggan.nama,
+			pelanggan.email,
+			');
+		$this->db->from('penjualan');
+		$this->db->join('pelanggan', 'pelanggan.id = penjualan.pelangganid');
+		$this->db->order_by('tanggal_pesan', 'desc');
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
 	function get_harga_by_paramid(){
 		$this->db->select('
 			produk_detail.id,
