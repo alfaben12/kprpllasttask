@@ -40,66 +40,242 @@ $(document).ready(function(){
 		});
 	});
 
-	$("#txt_generateharga").click(function(){
+	/* get stok untuk check */
+	$("#txt_produkid").change(function(){
 		var kategoriid = $("#txt_kategoriid").val();
 		var produkid = $("#txt_produkid").val();
 		var lenganid = $("#txt_lenganid").val();
 		var sizeid = $("#txt_sizeid").val();
 		var warnaid = $("#txt_warnaid").val();
-		var jenissablonid = $("#txt_jenissablonid").val();
-		var warnasablonid = $("#txt_jumlahwarnasablonid").val();
-		var jumlah = $("#txt_jumlah").val();
-		if (kategoriid == null || kategoriid == 0 || kategoriid == "") {
-			alert("Kategori produk dibutuhkan.");
-			return false;
-		}else if (produkid == null || produkid == 0 || produkid == "") {
-			alert("Produk dibutuhkan.");
-			return false;
-		}else if (lenganid == null || lenganid == 0 || lenganid == "") {
-			alert("Ukuran lengan dibutuhkan.");
-			return false;
-		}else if (sizeid == null || sizeid == 0 || sizeid == "") {
-			alert("Size dibutuhkan.");
-			return false;
-		}else if (jenissablonid == null || jenissablonid == 0 || jenissablonid == "") {
-			alert("Jenis sablon dibutuhkan.");
-			return false;
-		}else if (warnasablonid == null || warnasablonid == 0 || warnasablonid == "") {
-			alert("Warna sablon dibutuhkan.");
-			return false;
-		}else if (jumlah == null || jumlah == 0 || jumlah == "") {
-			alert("Jumlah dibutuhkan.");
-			return false;
-		}else{
-			$.ajax({
-				url: ajax_url_module + "generate_total_harga",
-				type: "POST",
-				data: {
-					txt_kategoriid: kategoriid,
-					txt_produkid: produkid,
-					txt_sizeid: sizeid,
-					txt_warnaid: warnaid,
-					txt_lenganid: lenganid,
-					txt_jenissablonid: jenissablonid,
-					txt_jumlahwarnasablonid: warnasablonid,
-					txt_jumlah: jumlah
+		$.ajax({
+			url: ajax_url_module + "get_sisa_stok",
+			type: "POST",
+			data: {
+				txt_kategoriid: kategoriid,
+				txt_produkid: produkid,
+				txt_sizeid: sizeid,
+				txt_warnaid: warnaid,
+				txt_lenganid: lenganid
 
-				},
-				global: true,
-				async: true,
-				cache: false,
-				dataType: "json",
-				beforeSend: function() {
+			},
+			global: true,
+			async: true,
+			cache: false,
+			dataType: "json",
+			beforeSend: function() {
 				// $.blockUI({message: $("#domMessage")});
 			},
 			complete: function() {
 				// $.unblockUI();
 			},
 			success: function (response) {
-				$("#text_harga").text(response.total_harga);
-				$("#txt_harga").val(response.total_harga);
+				$("#txt_stok").val(response.stok);
 			}
 		});
+	});
+
+	$("#txt_lenganid").change(function(){
+		var kategoriid = $("#txt_kategoriid").val();
+		var produkid = $("#txt_produkid").val();
+		var lenganid = $("#txt_lenganid").val();
+		var sizeid = $("#txt_sizeid").val();
+		var warnaid = $("#txt_warnaid").val();
+		$.ajax({
+			url: ajax_url_module + "get_sisa_stok",
+			type: "POST",
+			data: {
+				txt_kategoriid: kategoriid,
+				txt_produkid: produkid,
+				txt_sizeid: sizeid,
+				txt_warnaid: warnaid,
+				txt_lenganid: lenganid
+			},
+			global: true,
+			async: true,
+			cache: false,
+			dataType: "json",
+			beforeSend: function() {
+				// $.blockUI({message: $("#domMessage")});
+			},
+			complete: function() {
+				// $.unblockUI();
+			},
+			success: function (response) {
+				$("#txt_stok").val(response.stok);
+			}
+		});
+	});
+
+	$("#txt_lenganid").change(function(){
+		var kategoriid = $("#txt_kategoriid").val();
+		var produkid = $("#txt_produkid").val();
+		var lenganid = $("#txt_lenganid").val();
+		var sizeid = $("#txt_sizeid").val();
+		var warnaid = $("#txt_warnaid").val();
+		$.ajax({
+			url: ajax_url_module + "get_sisa_stok",
+			type: "POST",
+			data: {
+				txt_kategoriid: kategoriid,
+				txt_produkid: produkid,
+				txt_sizeid: sizeid,
+				txt_warnaid: warnaid,
+				txt_lenganid: lenganid
+			},
+			global: true,
+			async: true,
+			cache: false,
+			dataType: "json",
+			beforeSend: function() {
+				// $.blockUI({message: $("#domMessage")});
+			},
+			complete: function() {
+				// $.unblockUI();
+			},
+			success: function (response) {
+				$("#txt_stok").val(response.stok);
+			}
+		});
+	});
+
+	$("#txt_sizeid").change(function(){
+		var kategoriid = $("#txt_kategoriid").val();
+		var produkid = $("#txt_produkid").val();
+		var lenganid = $("#txt_lenganid").val();
+		var sizeid = $("#txt_sizeid").val();
+		var warnaid = $("#txt_warnaid").val();
+		$.ajax({
+			url: ajax_url_module + "get_sisa_stok",
+			type: "POST",
+			data: {
+				txt_kategoriid: kategoriid,
+				txt_produkid: produkid,
+				txt_sizeid: sizeid,
+				txt_warnaid: warnaid,
+				txt_lenganid: lenganid
+			},
+			global: true,
+			async: true,
+			cache: false,
+			dataType: "json",
+			beforeSend: function() {
+				// $.blockUI({message: $("#domMessage")});
+			},
+			complete: function() {
+				// $.unblockUI();
+			},
+			success: function (response) {
+				$("#txt_stok").val(response.stok);
+			}
+		});
+	});
+
+	$("#txt_warnaid").change(function(){
+		var kategoriid = $("#txt_kategoriid").val();
+		var produkid = $("#txt_produkid").val();
+		var lenganid = $("#txt_lenganid").val();
+		var sizeid = $("#txt_sizeid").val();
+		var warnaid = $("#txt_warnaid").val();
+		$.ajax({
+			url: ajax_url_module + "get_sisa_stok",
+			type: "POST",
+			data: {
+				txt_kategoriid: kategoriid,
+				txt_produkid: produkid,
+				txt_sizeid: sizeid,
+				txt_warnaid: warnaid,
+				txt_lenganid: lenganid
+			},
+			global: true,
+			async: true,
+			cache: false,
+			dataType: "json",
+			beforeSend: function() {
+				// $.blockUI({message: $("#domMessage")});
+			},
+			complete: function() {
+				// $.unblockUI();
+			},
+			success: function (response) {
+				$("#txt_stok").val(response.stok);
+			}
+		});
+	});
+
+	$("#txt_generateharga").click(function(){
+		if ($("#txt_jumlah").val() > $("#txt_stok").val()) {
+			alert("Jumlah tidak terpenuhi, sisa stok produk " + $("#txt_stok").val());
+			return false;
+		}else{
+			var kategoriid = $("#txt_kategoriid").val();
+			var produkid = $("#txt_produkid").val();
+			var lenganid = $("#txt_lenganid").val();
+			var sizeid = $("#txt_sizeid").val();
+			var warnaid = $("#txt_warnaid").val();
+			var jenissablonid = $("#txt_jenissablonid").val();
+			var warnasablonid = $("#txt_jumlahwarnasablonid").val();
+			var jumlah = $("#txt_jumlah").val();
+			if (kategoriid == null || kategoriid == 0 || kategoriid == "") {
+				alert("Kategori produk dibutuhkan.");
+				return false;
+			}else if (produkid == null || produkid == 0 || produkid == "") {
+				alert("Produk dibutuhkan.");
+				return false;
+			}else if (lenganid == null || lenganid == 0 || lenganid == "") {
+				alert("Ukuran lengan dibutuhkan.");
+				return false;
+			}else if (sizeid == null || sizeid == 0 || sizeid == "") {
+				alert("Size dibutuhkan.");
+				return false;
+			}else if (warnaid == null || warnaid == 0 || warnaid == "") {
+				alert("Warna dibutuhkan.");
+				return false;
+			}else if (jenissablonid == null || jenissablonid == 0 || jenissablonid == "") {
+				alert("Jenis sablon dibutuhkan.");
+				return false;
+			}else if (warnasablonid == null || warnasablonid == 0 || warnasablonid == "") {
+				alert("Warna sablon dibutuhkan.");
+				return false;
+			}else if (jumlah == null || jumlah == 0 || jumlah == "") {
+				alert("Jumlah dibutuhkan.");
+				return false;
+			}else{
+				$.ajax({
+					url: ajax_url_module + "generate_total_harga",
+					type: "POST",
+					data: {
+						txt_kategoriid: kategoriid,
+						txt_produkid: produkid,
+						txt_sizeid: sizeid,
+						txt_warnaid: warnaid,
+						txt_lenganid: lenganid,
+						txt_jenissablonid: jenissablonid,
+						txt_jumlahwarnasablonid: warnasablonid,
+						txt_jumlah: jumlah
+
+					},
+					global: true,
+					async: true,
+					cache: false,
+					dataType: "json",
+					beforeSend: function() {
+					// $.blockUI({message: $("#domMessage")});
+				},
+				complete: function() {
+					// $.unblockUI();
+				},
+				success: function (response) {
+					if (response.recheck_harga == 0 || response.recheck_harga == null || response.recheck_harga == "") {
+						alert("Stok tidak tersedia.");
+						return false;
+					}else{
+						$("#txt_stok").val(response.stok);
+						$("#text_harga").text(response.total_harga);
+						$("#txt_harga").val(response.total_harga);
+					}
+				}
+			});
+			}
 		}
 	});
 
@@ -112,7 +288,7 @@ $(document).ready(function(){
 		var warnaid = $("#txt_warnaid").val();
 		var jenissablonid = $("#txt_jenissablonid").val();
 		var warnasablonid = $("#txt_jumlahwarnasablonid").val();
-		
+
 		var text_kategoriid = $("#txt_kategoriid :selected").text();
 		var text_produkid = $("#txt_produkid :selected").text();
 		var text_lenganid = $("#txt_lenganid :selected").text();

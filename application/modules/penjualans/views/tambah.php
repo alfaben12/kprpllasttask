@@ -4,7 +4,7 @@
 	<div class="col-md-12">
 		<div class="panel">
 			<div class="panel-heading">
-				<h3 class="panel-title">Data Penjualan</h3>
+				<h3 class="panel-title">Data Pembeli</h3>
 			</div>
 			<div class="panel-body">
 				<table width="100%">
@@ -86,6 +86,7 @@
 						<td>
 							<font id="text_harga">0</font>
 							<input type="hidden" class="form-control" placeholder="Harga" id="txt_harga" name="txt_harga">
+							<input type="text" class="form-control" placeholder="Stok" id="txt_stok" name="txt_stok">
 						</td>
 						<td>&nbsp;</td>
 						<td>&nbsp;</td>

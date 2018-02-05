@@ -42,9 +42,38 @@ class Ajax extends CI_Controller{
 		$this->db->trans_complete();
 
 		foreach ($result as $key => $val) {
+			$data['recheck_harga'] = $val['total_harga'];
 			$data['total_harga'] = (($val['total_harga'] + $hargajenissablon + $hargawarnasablon) * $jumlah);
 			$data['stok'] = $val['stok'];
 			$data['id'] = $val['id'];
+		}
+
+		echo json_encode($data);
+	}
+
+	function get_sisa_stok(){
+		/* membuat variable post data */
+		$kategoriid = $this->input->post('txt_kategoriid');
+		$produkid = $this->input->post('txt_produkid');
+		$sizeid = $this->input->post('txt_sizeid');
+		$warnaid = $this->input->post('txt_warnaid');
+		$lenganid = $this->input->post('txt_lenganid');
+
+		$this->db->trans_start();
+		/* membuat value */
+		$this->penjualan->setKategoriID($kategoriid);
+		$this->penjualan->setProdukID($produkid);
+		$this->penjualan->setSizeID($sizeid);
+		$this->penjualan->setWarnaID($warnaid);
+		$this->penjualan->setLenganID($lenganid);
+
+		/* function get result */
+		$result = $this->penjualan->get_harga_by_paramid();
+		$this->db->trans_complete();
+
+		foreach ($result as $key => $val) {
+			$data['stok'] = $val['stok'] == null ? 0 : $val['stok'];
+			$data['id'] = $val['id'] == null ? 0 : $val['id'];
 		}
 
 		echo json_encode($data);

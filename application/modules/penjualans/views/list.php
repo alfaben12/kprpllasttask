@@ -15,6 +15,7 @@
 							<th>No Inv</th>
 							<th>Pembeli</th>
 							<th>Keterangan</th>
+							<th>Status</th>
 							<th>Pesan</th>
 							<th>Opsi</th>
 						</tr>
@@ -28,6 +29,7 @@
 								<td><?= $val['no_penjualan'] ?></td>
 								<td><?= $val['nama'] ?> (<?= $val['email'] ?>)</td>
 								<td><?= $val['keterangan'] == '' ? '-' : $val['keterangan'] ?></td>
+								<td><code><?= $val['statusid'] == 0 ? 'Menunggu Verifikasi' : 'Terverifikasi' ?></code></td>
 								<td><?= $val['tanggal_pesan'] ?></td>
 								<td>
 									<div class="btn-group">
@@ -35,7 +37,15 @@
 											Respon
 										</button>
 										<ul class="dropdown-menu">
-											<li><a href="<?= base_url(). $this->uri->segment(1); ?>/edit/id/<?= $val['id'] ?>">Edit</a></li>
+											<li><a href="<?= base_url(). $this->uri->segment(1); ?>/detail/id/<?= $val['id'] ?>">Detail</a></li>
+											<?php
+											if ($val['statusid'] == 0) {
+												?>
+												<li><a href="<?= base_url(). $this->uri->segment(1); ?>/edit/id/<?= $val['id'] ?>">Edit</a></li>
+												<li><a href="<?= base_url(). $this->uri->segment(1); ?>/verifikasi/id/<?= $val['id'] ?>">Verifikasi</a></li>
+												<?php
+											}
+											?>
 											<li><a href="<?= base_url(). $this->uri->segment(1); ?>/hapus/id/<?= $val['id'] ?>">Hapus</a></li>
 										</ul>
 									</div>
