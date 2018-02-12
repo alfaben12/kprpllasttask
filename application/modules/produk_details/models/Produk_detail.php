@@ -101,5 +101,44 @@ class Produk_detail extends CI_Model{
 		$query = $this->db->get();
 		return $query->result_array();
 	}
+
+	function check_data_produk(){
+		$this->db->select('
+			SUM(id) AS y
+			', FALSE);
+		$this->db->from('produk_detail');
+		$this->db->where('kategoriid', $this->getKategoriID());
+		$this->db->where('produkid', $this->getProdukID());
+		$this->db->where('warnaid', $this->getWarnaID());
+		$this->db->where('sizeid', $this->getSizeID());
+		$this->db->where('lenganid', $this->getLenganID());
+		$query = $this->db->get();
+		if($query->row()->y == 0 || $query->row()->y == null || $query->row()->y == ''){
+			$result = 0;
+		}else{
+			$result = 1;
+		}
+		return $result;
+	}
+
+	function get_sisa_Stok(){
+		$this->db->select('
+			id,
+			stok
+			', FALSE);
+		$this->db->from('produk_detail');
+		$this->db->where('kategoriid', $this->getKategoriID());
+		$this->db->where('produkid', $this->getProdukID());
+		$this->db->where('warnaid', $this->getWarnaID());
+		$this->db->where('sizeid', $this->getSizeID());
+		$this->db->where('lenganid', $this->getLenganID());
+		$query = $this->db->get();
+		if($query->row()->stok == 0 || $query->row()->stok == null || $query->row()->stok == ''){
+			$result = 0;
+		}else{
+			$result = $query->row_array();
+		}
+		return $result;
+	}
 }
 ?>

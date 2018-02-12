@@ -1,6 +1,30 @@
 <?php
 if(!defined('BASEPATH')) exit('No direct script access allowed');
 
+/*-------- BAHAN DROPDOWN --------*/
+if(!function_exists('bahan_dropdown')) {
+	function bahan_dropdown() {
+		$CI = &get_instance();
+		$CI->load->database();
+
+		$data = array();
+		$CI->db->select('
+			bahan.id,
+			bahan.nama
+			');
+		$CI->db->from('bahan');
+		$CI->db->order_by('nama','asc');
+		$data[''] = '';
+		$result = $CI->db->get();
+		if($result->num_rows() > 0) {
+			foreach ($result->result_array() as $key => $val) {
+				$data[$val['id']] = $val['nama'];
+			}
+		}
+		return($data);
+	}
+}
+
 /*-------- KATEGORI DROPDOWN --------*/
 if(!function_exists('kategori_dropdown')) {
 	function kategori_dropdown() {
@@ -63,7 +87,7 @@ if(!function_exists('sizelengan_dropdown')) {
 			');
 		$CI->db->from('lengan');
 		$CI->db->order_by('value','asc');
-		$data[''] = ' Lengan';
+		$data[''] = ' ';
 		$result = $CI->db->get();
 		if($result->num_rows() > 0) {
 			foreach ($result->result_array() as $key => $val) {
@@ -240,6 +264,31 @@ if(!function_exists('produk_bykategoriid_dropdown_edit')) {
 		if($result->num_rows() > 0) {
 			foreach ($result->result_array() as $key => $val) {
 				$data[$val['id']] = $val['nama_produk'];
+			}
+		}
+		return($data);
+	}
+}
+
+/*-------- PENJUALAN DROPDOWN --------*/
+if(!function_exists('penjualan_dropdown')) {
+	function penjualan_dropdown() {
+		$CI = &get_instance();
+		$CI->load->database();
+
+		$data = array();
+		$CI->db->select('
+			penjualan.id,
+			penjualan.no_penjualan
+			');
+		$CI->db->from('penjualan');
+		$CI->db->order_by('no_penjualan','asc');
+		$CI->db->where('statusid', 1);
+		$result = $CI->db->get();
+		$data[''] = '';
+		if($result->num_rows() > 0) {
+			foreach ($result->result_array() as $key => $val) {
+				$data[$val['id']] = $val['no_penjualan'];
 			}
 		}
 		return($data);

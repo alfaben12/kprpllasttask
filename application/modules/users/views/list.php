@@ -8,7 +8,7 @@
 				<h3 class="panel-title">Daftar Produk</h3>
 			</div>
 			<div class="panel-body">
-				<table class="table table-striped">
+				<table class="datatables table table-striped">
 					<thead>
 						<tr>
 							<th>No</th>
@@ -31,7 +31,7 @@
 								<td><?= $val['tanggal_dibuat'] ?></td>
 								<td>
 									<div class="btn-group">
-										<button aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
+										<button class="btn btn-primary btn-sm" aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
 											Respon
 										</button>
 										<ul class="dropdown-menu">

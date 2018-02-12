@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-// $hook['post_controller_constructor'][] = array(
-// 	'filename' => 'security_login.php',
-// 	'function' => 'session_cek',
-// 	'filepath' => 'hooks'
-// 	);
+$hook['post_controller_constructor'][] = array(
+	'filename' => 'security_login.php',
+	'function' => 'session_cek',
+	'filepath' => 'hooks'
+	);
 
 $hook['post_controller_constructor'][] = array(
 	'function' => 'output_profiler',

@@ -324,13 +324,13 @@ $(document).ready(function(){
 			"<td style='text-align: center;'><font id='text_produkid'>"+ text_produkid +"</font></td>" +
 			"<td>&nbsp;</td>" +
 			"<td>&nbsp;</td>" +
+			"<td style='text-align: center;'><font id='text_lenganid'>"+ text_lenganid +"</font></td>" +
+			"<td>&nbsp;</td>" +
+			"<td>&nbsp;</td>" +
 			"<td style='text-align: center;'><font id='text_sizeid'>"+ text_sizeid +"</font></td>" +
 			"<td>&nbsp;</td>" +
 			"<td>&nbsp;</td>" +
 			"<td style='text-align: center;'><font id='text_warnaid'>"+ text_warnaid +"</font></td>" +
-			"<td>&nbsp;</td>" +
-			"<td>&nbsp;</td>" +
-			"<td style='text-align: center;'><font id='text_lenganid'>"+ text_lenganid +"</font></td>" +
 			"<td>&nbsp;</td>" +
 			"<td>&nbsp;</td>" +
 			"<td style='text-align: center;'><font id='text_jenissablonid'>"+ text_jenissablonid +"</font></td>" +

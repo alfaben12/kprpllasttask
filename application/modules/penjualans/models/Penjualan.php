@@ -69,6 +69,7 @@ class Penjualan extends CI_Model{
 
 	function insert_detail(){
 		$data = array(
+			'penjualanid' => $this->getPenjualanID(),
 			'kategoriid' => $this->getKategoriID(),
 			'produkid' => $this->getProdukID(),
 			'sizeid' => $this->getSizeID(),
@@ -85,6 +86,14 @@ class Penjualan extends CI_Model{
 	function update_data(){
 		$data = array(
 			'keterangan' => $this->getKeterangan(),
+			'statusid' => $this->getStatusID()
+		);
+		$this->db->where('id', $this->getID());
+		$this->db->update('penjualan', $data);
+	}
+
+	function update_status(){
+		$data = array(
 			'statusid' => $this->getStatusID()
 		);
 		$this->db->where('id', $this->getID());
@@ -118,6 +127,9 @@ class Penjualan extends CI_Model{
 	function delete(){
 		$this->db->where('id', $this->getID());
 		$this->db->delete('penjualan');
+
+		$this->db->where('penjualanid', $this->getID());
+		$this->db->delete('penjualan_detail');
 	}
 
 	function delete_detail(){

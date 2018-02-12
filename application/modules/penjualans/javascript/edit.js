@@ -212,16 +212,22 @@ $(document).ready(function(){
 					cache: false,
 					dataType: "json",
 					beforeSend: function() {
-						// $.blockUI({message: $("#domMessage")});
-					},
-					complete: function() {
-						// $.unblockUI();
-					},
-					success: function (response) {
+					// $.blockUI({message: $("#domMessage")});
+				},
+				complete: function() {
+					// $.unblockUI();
+				},
+				success: function (response) {
+					if (response.recheck_harga == 0 || response.recheck_harga == null || response.recheck_harga == "") {
+						alert("Stok tidak tersedia.");
+						return false;
+					}else{
+						$("#txt_stok_" + key).val(response.stok);
 						$("#text_harga_" + key).text(response.total_harga);
 						$("#txt_harga_" + key).val(response.total_harga);
 					}
-				});
+				}
+			});
 			}
 		}
 	});

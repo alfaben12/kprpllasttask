@@ -1,14 +1,16 @@
 <?= $this->session->flashdata('pesan'); ?>
-<h3 class="page-title">Produk</h3>
-<div class="row">
-	<div class="col-md-8">
+<h1 class="page-title"><i class="lnr lnr-home"></i> Gudang</h1>
+<!-- <h3 class="page-title">Produk</h3> -->
+<a href="<?= base_url('produks/tambah'); ?>" class="btn btn-primary">Tambah Produk <b>+</b></a>
+<div class="row" style="margin-top: 20px;">
+	<div class="col-md-12">
 		<!-- TABLE STRIPED -->
 		<div class="panel">
 			<div class="panel-heading">
 				<h3 class="panel-title">Daftar Produk</h3>
 			</div>
 			<div class="panel-body">
-				<table class="table table-striped">
+				<table class="datatables table table-striped" >
 					<thead>
 						<tr>
 							<th>No</th>
@@ -29,7 +31,7 @@
 								<td><?= $val['harga'] ?></td>
 								<td>
 									<div class="btn-group">
-										<button aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
+										<button class="btn btn-primary btn-sm" aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
 											Respon
 										</button>
 										<ul class="dropdown-menu">

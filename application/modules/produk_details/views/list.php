@@ -8,7 +8,7 @@
 				<h3 class="panel-title">Daftar Produk</h3>
 			</div>
 			<div class="panel-body">
-				<table class="table table-striped">
+				<table class="datatables table table-striped">
 					<thead>
 						<tr>
 							<th>No</th>

@@ -8,12 +8,11 @@
 				<h3 class="panel-title">Daftar Kategori</h3>
 			</div>
 			<div class="panel-body">
-				<table class="table table-striped">
+				<table class="datatables table table-striped">
 					<thead>
 						<tr>
 							<th>No</th>
 							<th>Nama Kategori</th>
-							<th>Dibuat Pada</th>
 							<th>Opsi</th>
 						</tr>
 					</thead>
@@ -24,10 +23,9 @@
 							<tr>
 								<td><?= $key + 1 ?></td>
 								<td><?= $val['nama_kategori'] ?></td>
-								<td><?= $val['tanggal_dibuat'] ?></td>
 								<td>
 									<div class="btn-group">
-										<button aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
+										<button class="btn btn-primary btn-sm" aria-expanded="true" data-toggle="dropdown" style="width: 100px;">
 											Respon
 										</button>
 										<ul class="dropdown-menu">

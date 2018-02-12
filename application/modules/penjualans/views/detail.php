@@ -41,53 +41,53 @@ foreach ($result as $key => $val) {
 				<div class="panel-body">
 					<table width="100%">
 						<tr>
-								<td>
-									<font><b> Kategori</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Produk</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Lengan</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Size</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Warna</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Sablon</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Warna Sablon</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Jumlah</b></font>
-								</td>
-								<td>&nbsp;</td>
-								<td>&nbsp;</td>
-								<td>
-									<font><b> Harga</b></font>
-								</td>
-							</tr>
-							<tr>
-								<td><br/></td>
-							</tr>
+							<td>
+								<font><b> Kategori</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Produk</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Lengan</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Size</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Warna</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Sablon</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Warna Sablon</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Jumlah</b></font>
+							</td>
+							<td>&nbsp;</td>
+							<td>&nbsp;</td>
+							<td>
+								<font><b> Harga</b></font>
+							</td>
+						</tr>
+						<tr>
+							<td><br/></td>
+						</tr>
 						<?php
 						foreach ($result_detail as $key => $value) {
 							?>
@@ -152,12 +152,6 @@ foreach ($result as $key => $val) {
 				<div class="panel-body">
 					<textarea class="form-control" placeholder="Catatan" name="txt_keterangan" rows="3" disabled=""><?= $val['keterangan'] ?></textarea>
 					<br/>
-					<input type="text" id="txt_hapusrow" name="txt_hapusrow" class="btn btn-primary btn-sm" value="Hapus" size="5">
-					<br/>
-					<br/>
-					<div style="text-align: right">
-						<input type="submit" class="btn btn-primary btn-sm" id="txt_simpan" value="Simpan">
-					</div>
 				</div>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ if(!defined('BASEPATH')) exit('No direct script access allowed');
 class Bahan extends CI_Model{
 
 	private $id;
+	private $nama;
 	private $bahan;
 
 	function __construct(){parent :: __construct();}
@@ -49,6 +50,30 @@ class Bahan extends CI_Model{
 		$this->db->where('id', $this->getID());
 		$query = $this->db->get();
 		return $query->result_array();
+	}
+
+	function get_stok_by_paramid(){
+		$this->db->select('id,stok');
+		$this->db->from('bahan');
+		$this->db->where('id', $this->getID());
+		$query = $this->db->get();
+		return $query->result_array();
+	}
+
+	function get_sisa_Stok(){
+		$this->db->select('
+			id,
+			stok
+			', FALSE);
+		$this->db->from('bahan');
+		$this->db->where('id', $this->getID());
+		$query = $this->db->get();
+		if($query->row()->stok == 0 || $query->row()->stok == null || $query->row()->stok == ''){
+			$result = 0;
+		}else{
+			$result = $query->row_array();
+		}
+		return $result;
 	}
 }
 ?>

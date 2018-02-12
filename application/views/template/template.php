@@ -19,6 +19,8 @@
 	<link rel="stylesheet" href="<?= base_url() . config_item('stylesheet') ?>css/demo.css">
 	<link rel="stylesheet" href="<?= base_url() . config_item('library') ?>select2/select2.min.css">
 	<link rel="stylesheet" href="<?= base_url() . config_item('library') ?>select2/select2.min.css">
+	<link rel="stylesheet" href="<?= base_url() . config_item('library') ?>datatable/dataTables.bootstrap.css">
+	<link rel="stylesheet" href="<?= base_url() . config_item('library') ?>datatable/dataTables.responsive.css">
 	<!-- GOOGLE FONTS -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet"> -->
 	<!-- ICONS -->
@@ -43,6 +45,9 @@
 	<script src="<?= base_url() . config_item('stylesheet') ?>vendor/toastr/toastr.min.js"></script>
 	<script src="<?= base_url() . config_item('stylesheet') ?>scripts/klorofil-common.js"></script>
 	<script src="<?= base_url() . config_item('library') ?>select2/select2.full.js"></script>
+	<script src="<?= base_url() . config_item('library') ?>datatable/jquery.dataTables.min.js"></script>
+	<script src="<?= base_url() . config_item('library') ?>datatable/dataTables.bootstrap.js"></script>
+	<script src="<?= base_url() . config_item('library') ?>datatable/dataTables.responsive.js"></script>
 
 	<script>
 		$.fn.select2.defaults.set( "theme", "bootstrap" );
@@ -51,6 +56,11 @@
 			containerCssClass: ":all:"
 		} );
 	</script>
+	<script>
+		$('.datatables').DataTable();
+	</script>
+
+
 
 </body>
 
